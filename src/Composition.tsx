@@ -1,7 +1,8 @@
-import { useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig } from "remotion";
 
 export const MyComposition = () => {
 	const { fps, durationInFrames, width, height } = useVideoConfig();
+	const frame = useCurrentFrame();
 	return (
 		<div
 				style={{
@@ -12,7 +13,6 @@ export const MyComposition = () => {
 					color: 'green',
 				}}
 				>
-			Hewwo! 
 			This video is {durationInFrames/fps} seconds long
 			It is {width} x {height}
 		</div>
